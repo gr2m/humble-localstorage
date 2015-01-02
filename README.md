@@ -2,6 +2,8 @@
 
 > wraps localStorage and adds .getObject, .setObject, .isPersistent methods
 
+[![Build Status](https://travis-ci.org/gr2m/humble-localstorage.png?branch=master)](https://travis-ci.org/gr2m/humble-localstorage/)
+
 `localStorage` is a simple key/value store API for browsers, perfectly
 suited to store little amount of data like configurations.
 
@@ -12,25 +14,14 @@ Cookies disabled, etc).
 
 In case data cannot be persisted in localStorage,  `humbleLocalStorage`
 falls back to in-memory storage. To determine if data is being persisted,
-use `humbleLocalStorage.isPersistent()` method.
+use `humbleLocalStorage.isPersistent` property.
 
 
 ## Installation
 
-Download [humble-localstorage.js](#)
-or [humble-localstorage.min.js](#).
-
-Install via Bower
-
-```
-bower install -S humble-localstorage
-```
-
-Install via npm
-
-```
-npm install -S humble-localstorage
-```
+- Download: https://github.com/gr2m/humble-localstorage/releases
+- or: install via Bower: `bower install -S humble-localstorage`
+- or: install via npm: `npm install -S humble-localstorage`
 
 
 ## Usage
@@ -45,8 +36,7 @@ humbleLocalStorage.length // number of stored keys
 
 humbleLocalStorage.getObject('mykey') // JSON value or null
 humbleLocalStorage.setObject('mykey', {foo: 'bar'}) // stored as '{"foo": "bar"}'
-humbleLocalStorage.toJSON() // JSON object of all keys & values
-humbleLocalStorage.isPersistent() // true if data persists page reload, false if not
+humbleLocalStorage.isPersistent // true if data persists page reload, false if not
 ```
 
 
