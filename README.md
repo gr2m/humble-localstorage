@@ -1,6 +1,6 @@
 # humble-localstorage
 
-> wraps localStorage and adds .getObject, .setObject, .isPersistent methods
+> wraps localStorage and adds .getObject(), .setObject(), .isPersistent
 
 [![Build Status](https://travis-ci.org/gr2m/humble-localstorage.png?branch=master)](https://travis-ci.org/gr2m/humble-localstorage/)
 
