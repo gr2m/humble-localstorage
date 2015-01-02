@@ -31,7 +31,7 @@
   "bugs": {
     "url": "http://github.com/gr2m/humble-localstorage/issues"
   },
-  "homepage": "https://github.com/gr2m/humble-localstorage",
+  "homepage": "http://gr2m.github.io/humble-localstorage/",
   "devDependencies": {
     "browserify": "^8.0.3",
     "chai": "^1.10.0",
