@@ -13,7 +13,9 @@
     "test-unit": "mocha tests/unit",
     "test-browser": "node ./bin/test-browser.js",
     "dev-server": "http-server -a 127.0.0.1 -p 8000",
-    "build": "browserify . -s humbleLocalStorage > dist/humble-localstorage.js && uglifyjs dist/humble-localstorage.js -mc > dist/humble-localstorage.min.js"
+    "build": "browserify . -s humbleLocalStorage > dist/humble-localstorage.js && uglifyjs dist/humble-localstorage.js -mc > dist/humble-localstorage.min.js",
+    "docs": "doxx --source lib/ --target docs/ --template docs/template.jade --ignore index.js",
+    "deploy": "gh-pages-deploy "
   },
   "repository": {
     "type": "git",
@@ -49,5 +51,8 @@
   "dependencies": {
     "has-localstorage": "^1.0.0",
     "localstorage-memory": "^1.0.0"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "docs"
   }
 }
