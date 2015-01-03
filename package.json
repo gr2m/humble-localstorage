@@ -1,6 +1,6 @@
 {
   "name": "humble-localstorage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wraps localStorage and adds .getObject(), .setObject(), .isPersistent",
   "main": "lib/index.js",
   "directories": {
