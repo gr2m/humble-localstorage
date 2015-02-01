@@ -28,7 +28,13 @@ describe('lib/api.js', function () {
     describe('when localStorage is persistent', function() {
       beforeEach(function() {
         this.api.hasLocalStorage.returns(true);
-        global.localStorage = {};
+        global.localStorage = {
+          getItem: function() {},
+          setItem: function() {},
+          removeItem: function() {},
+          key: function() {},
+          clear: function() {}
+        };
       });
 
       it('api.create().isPersistent is true', function() {

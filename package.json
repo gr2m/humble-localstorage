@@ -8,7 +8,7 @@
   },
   "scripts": {
     "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
-    "test": "npm run jshint && npm run test-browser",
+    "test": "npm run jshint && mocha tests/unit && npm run test-browser",
     "test-node": "sh bin/test-node.sh",
     "test-unit": "mocha tests/unit",
     "test-browser": "node ./bin/test-browser.js",
