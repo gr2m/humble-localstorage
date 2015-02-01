@@ -40,6 +40,17 @@ humbleLocalStorage.isPersistent // true if data persists page reload, false if n
 ```
 
 
+## Run tests
+
+```
+# see all available tasks
+npm run
+
+# run unit & integration tests
+# note: selenium must be running
+npm test
+```
+
 ## License
 
 MIT
