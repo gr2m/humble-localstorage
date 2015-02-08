@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "browserify . -s humbleLocalStorage > dist/humble-localstorage.js && uglifyjs dist/humble-localstorage.js -mc > dist/humble-localstorage.min.js",
-    "deploy": "gh-pages-deploy",
+    "wip-deploy": "gh-pages-deploy # https://github.com/meandavejustice/gh-pages-deploy/issues/5",
+    "deploy": "git branch -f gh-pages && git checkout gh-pages && cp -r docs/* . && git reset --hard origin/master && git add -A . && git commit -a -m 'gh-pages update' && git push origin gh-pages --force && git checkout master",
     "dev-server": "http-server -a 127.0.0.1 -p 8000",
     "docs": "doxx --source lib/ --target docs/ --template docs/template.jade --ignore index.js",
     "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
