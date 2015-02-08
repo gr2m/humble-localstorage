@@ -7,15 +7,17 @@
     "test": "tests"
   },
   "scripts": {
-    "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
-    "test": "npm run jshint && mocha tests/unit && npm run test-browser",
-    "test-node": "sh bin/test-node.sh",
-    "test-unit": "mocha tests/unit",
-    "test-browser": "node ./bin/test-browser.js",
-    "dev-server": "http-server -a 127.0.0.1 -p 8000",
     "build": "browserify . -s humbleLocalStorage > dist/humble-localstorage.js && uglifyjs dist/humble-localstorage.js -mc > dist/humble-localstorage.min.js",
+    "deploy": "gh-pages-deploy ",
+    "dev-server": "http-server -a 127.0.0.1 -p 8000",
     "docs": "doxx --source lib/ --target docs/ --template docs/template.jade --ignore index.js",
-    "deploy": "gh-pages-deploy "
+    "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
+    "postpublish": "semantic-release post && npm run docs && npm run deploy",
+    "prepublish": "semantic-release pre",
+    "test": "npm run jshint && mocha tests/unit && npm run test-browser",
+    "test-browser": "node ./bin/test-browser.js",
+    "test-node": "sh bin/test-node.sh",
+    "test-unit": "mocha tests/unit"
   },
   "repository": {
     "type": "git",
@@ -44,6 +46,7 @@
     "querystring": "^0.2.0",
     "request": "^2.51.0",
     "sauce-connect-launcher": "^0.9.3",
+    "semantic-release": "^2.0.0",
     "sinon": "^1.12.2",
     "uglify-js": "^2.4.16",
     "uglifyjs": "^2.3.6",
