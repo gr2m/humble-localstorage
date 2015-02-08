@@ -9,7 +9,8 @@
   "scripts": {
     "build": "browserify . -s humbleLocalStorage > dist/humble-localstorage.js && uglifyjs dist/humble-localstorage.js -mc > dist/humble-localstorage.min.js",
     "wip-deploy": "gh-pages-deploy # https://github.com/meandavejustice/gh-pages-deploy/issues/5",
-    "deploy": "git branch -f gh-pages && git checkout gh-pages && cp -r docs/* . && git reset --hard origin/master && git add -A . && git commit -a -m 'gh-pages update' && git push origin gh-pages --force && git checkout master",
+    "predeploy": "git config user.name \"Travis-CI\" && git config user.email \"deploy@travis-ci.org\" && git remote add deploy \"https://${GH_TOKEN}@github.com/gr2m/humble-localstorage.git\" > /dev/null 2>&1",
+    "deploy": "git branch -f gh-pages && git checkout gh-pages && cp -r docs/* . && git reset --hard origin/master && git add -A . && git commit -a -m 'gh-pages update' && git push deploy gh-pages --force && git checkout master",
     "dev-server": "http-server -a 127.0.0.1 -p 8000",
     "docs": "doxx --source lib/ --target docs/ --template docs/template.jade --ignore index.js",
     "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
