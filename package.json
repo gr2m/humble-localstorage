@@ -38,6 +38,7 @@
     "browserify": "^8.0.3",
     "chai": "^1.10.0",
     "derequire": "^1.2.0",
+    "doxx": "^1.2.5",
     "expect.js": "^0.3.1",
     "gh-pages-deploy": "^0.1.1",
     "http-server": "^0.7.4",
