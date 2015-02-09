@@ -3,6 +3,8 @@
 > wraps localStorage and adds .getObject(), .setObject(), .isPersistent
 
 [![Build Status](https://travis-ci.org/gr2m/humble-localstorage.png?branch=master)](https://travis-ci.org/gr2m/humble-localstorage/)
+[![Dependencies Status](https://david-dm.org/gr2m/humble-localstorage.svg)](https://david-dm.org/gr2m/humble-localstorage)
+[![devDependency Status](https://david-dm.org/gr2m/humble-localstorage/dev-status.svg)](https://david-dm.org/gr2m/humble-localstorage#info=devDependencies)
 
 `localStorage` is a simple key/value store API for browsers, perfectly
 suited to store little amount of data like configurations.
