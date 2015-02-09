@@ -3,9 +3,6 @@
   "version": "0.0.0-semantically-released",
   "description": "wraps localStorage and adds .getObject(), .setObject(), .isPersistent",
   "main": "lib/index.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
     "build": "browserify . -s humbleLocalStorage > dist/humble-localstorage.js && uglifyjs dist/humble-localstorage.js -mc > dist/humble-localstorage.min.js",
     "wip-deploy": "gh-pages-deploy # https://github.com/meandavejustice/gh-pages-deploy/issues/5",
@@ -13,13 +10,12 @@
     "deploy": "git branch -f gh-pages && git checkout gh-pages && cp -r docs/* . && git reset --hard origin/master && git add -A . && git commit -a -m 'gh-pages update' && git push deploy gh-pages --force && git checkout master",
     "dev-server": "http-server -a 127.0.0.1 -p 8000",
     "docs": "doxx --source lib/ --target docs/ --template docs/template.jade --ignore index.js",
-    "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
+    "jshint": "jshint -c .jshintrc lib/ test/",
     "postpublish": "semantic-release post && npm run docs && npm run deploy",
     "prepublish": "semantic-release pre",
-    "test": "npm run jshint && mocha tests/unit && npm run test-browser",
-    "test-browser": "node ./bin/test-browser.js",
-    "test-node": "sh bin/test-node.sh",
-    "test-unit": "mocha tests/unit"
+    "test": "npm run jshint && npm run test-unit && npm run test-e2e",
+    "test-e2e": "testmate test/*.js",
+    "test-unit": "mocha test/unit"
   },
   "repository": {
     "type": "git",
@@ -43,17 +39,12 @@
     "doxx": "^1.2.5",
     "expect.js": "^0.3.1",
     "gh-pages-deploy": "^0.2.0",
-    "http-server": "^0.7.4",
     "jshint": "^2.5.11",
     "mocha": "^2.1.0",
-    "querystring": "^0.2.0",
-    "request": "^2.51.0",
-    "sauce-connect-launcher": "^0.9.3",
     "semantic-release": "^3.0.1",
     "sinon": "^1.12.2",
-    "uglify-js": "^2.4.16",
-    "uglifyjs": "^2.3.6",
-    "wd": "^0.3.11"
+    "testmate": "^1.0.1",
+    "uglify-js": "^2.4.16"
   },
   "dependencies": {
     "has-localstorage": "^1.0.0",
