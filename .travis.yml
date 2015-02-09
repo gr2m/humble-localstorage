@@ -6,11 +6,15 @@ sudo: false
 
 env:
   global:
-  # saucelabs
-  - secure: Mnb1vyeonjxbYNRgDARMuznC1iI4Rb2tfEM1OR2nJQE3Ln+1X/B60nXNOA0O2WdRQuZQHMPGQpAhxojd+YTLbalU+nmXgEVn7YJWH7yc3vj2fh6IWWooUtukK2rDfUzRInjVP09XyZlgTjNd7nYZLImC9JH6steypTFq2FKF/Yg=
-  - secure: Pv2nyUD133hzft9nfCzJFYwYIusn9QPM3LQcuuunUDfcmV0u5Tb+4cAjS4cc55bYnL8BZYayhJpKUgJUowEHDsmJmpsfFkUxAm9DLztcmxYQ6tvChh/QOkvVgS8+TFdHGSwaKeEWiFQJjRSchl6cITDJCNiF9qiYAqOwgbBVz4U=
-  # github token
-  - secure: FGMPuZuj/oY1nCnumynswd5AoWUJcrVsE1u6iuN0ICrGJ7s9phl3bGUuxZVi1xYPcFQ+8MyE+13o6u65x9i20SJvFREPNXro5qg8JCoLntYZfHqho8s/jemsVgZyqSSH7xr/pDz6rJC2CzA385rhu/cb1F5wcosiA80ArX1pKuU=
+    # saucelabs
+    - secure: Mnb1vyeonjxbYNRgDARMuznC1iI4Rb2tfEM1OR2nJQE3Ln+1X/B60nXNOA0O2WdRQuZQHMPGQpAhxojd+YTLbalU+nmXgEVn7YJWH7yc3vj2fh6IWWooUtukK2rDfUzRInjVP09XyZlgTjNd7nYZLImC9JH6steypTFq2FKF/Yg=
+    - secure: Pv2nyUD133hzft9nfCzJFYwYIusn9QPM3LQcuuunUDfcmV0u5Tb+4cAjS4cc55bYnL8BZYayhJpKUgJUowEHDsmJmpsfFkUxAm9DLztcmxYQ6tvChh/QOkvVgS8+TFdHGSwaKeEWiFQJjRSchl6cITDJCNiF9qiYAqOwgbBVz4U=
+    # github token
+    - secure: FGMPuZuj/oY1nCnumynswd5AoWUJcrVsE1u6iuN0ICrGJ7s9phl3bGUuxZVi1xYPcFQ+8MyE+13o6u65x9i20SJvFREPNXro5qg8JCoLntYZfHqho8s/jemsVgZyqSSH7xr/pDz6rJC2CzA385rhu/cb1F5wcosiA80ArX1pKuU=
+  matrix:
+    - TEST_CLIENT=node
+    - TEST_CLIENT=selenium:firefox
+    - TEST_CLIENT="saucelabs:internet explorer:10:Windows 8"
 
 
 deploy:
