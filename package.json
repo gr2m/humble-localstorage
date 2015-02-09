@@ -44,7 +44,7 @@
     "selenium": "^2.20.0",
     "semantic-release": "^2.0.0",
     "sinon": "^1.12.2",
-    "uglifyjs": "^2.3.6"
+    "uglify-js": "^2.4.16"
   },
   "dependencies": {
     "has-localstorage": "^1.0.0",
