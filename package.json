@@ -44,7 +44,7 @@
     "selenium": "^2.20.0",
     "semantic-release": "^2.0.0",
     "sinon": "^1.12.2",
-    "testmate": "^1.0.0",
+    "testmate": "^1.0.1",
     "uglify-js": "^2.4.16"
   },
   "dependencies": {
