@@ -10,7 +10,7 @@
     "deploy": "git branch -f gh-pages && git checkout gh-pages && cp -r docs/* . && git reset --hard origin/master && git add -A . && git commit -a -m 'gh-pages update' && git push deploy gh-pages --force && git checkout master",
     "dev-server": "http-server -a 127.0.0.1 -p 8000",
     "docs": "doxx --source lib/ --target docs/ --template docs/template.jade --ignore index.js",
-    "jshint": "jshint -c .jshintrc lib/ bin/ test/",
+    "jshint": "jshint -c .jshintrc lib/ test/",
     "postpublish": "semantic-release post && npm run docs && npm run deploy",
     "prepublish": "semantic-release pre",
     "test": "npm run jshint && npm run test-unit && npm run test-e2e",
