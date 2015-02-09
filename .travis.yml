@@ -46,4 +46,4 @@ deploy:
   on:
     branch: master
     repo: gr2m/humble-localstorage
-
+    condition: "$BUILD_LEADER$BUILD_AGGREGATE_STATUS = YESothers_succeeded"
