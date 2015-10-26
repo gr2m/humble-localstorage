@@ -31,7 +31,7 @@
   },
   "homepage": "http://gr2m.github.io/humble-localstorage/",
   "devDependencies": {
-    "browserify": "^11.2.0",
+    "browserify": "^12.0.0",
     "chai": "^3.4.0",
     "derequire": "^2.0.2",
     "doxx": "^2.1.1",
