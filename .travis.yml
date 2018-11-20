@@ -1,15 +1,4 @@
-sudo: false
 language: node_js
-cache:
-  directories:
-    - node_modules
-notifications:
-  email: false
-node_js:
-  - 4
-before_install:
-  - npm i -g npm
-before_script:
-  - npm prune
-after_success:
-  - npm run semantic-release
+cache: npm
+node_js: lts/*
+after_success: npm run semantic-release
