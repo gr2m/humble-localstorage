@@ -3,16 +3,8 @@
   "description": "wraps localStorage and adds .getObject(), .setObject(), .isPersistent",
   "main": "lib/index.js",
   "scripts": {
-    "build": "browserify . -s humbleLocalStorage > dist/humble-localstorage.js && uglifyjs dist/humble-localstorage.js -mc > dist/humble-localstorage.min.js",
-    "wip-deploy": "gh-pages-deploy # https://github.com/meandavejustice/gh-pages-deploy/issues/5",
-    "predeploy": "git config user.name \"Travis-CI\" && git config user.email \"deploy@travis-ci.org\" && git remote add deploy \"https://${GH_TOKEN}@github.com/gr2m/humble-localstorage.git\" > /dev/null 2>&1",
-    "deploy": "git branch -f gh-pages && git checkout gh-pages && cp -r docs/* . && git reset --hard origin/master && git add -A . && git commit -a -m 'gh-pages update' && git push deploy gh-pages --force && git checkout master",
-    "dev-server": "http-server -a 127.0.0.1 -p 8000",
-    "docs": "doxx --source lib/ --target docs/ --template docs/template.jade --ignore index.js",
     "pretest": "standard",
-    "test": "npm run jshint && npm run test-unit && npm run test-e2e",
-    "test-e2e": "testmate test/*.js",
-    "test-unit": "mocha test/unit",
+    "test": "mocha 'test/**/*.js'",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -31,24 +23,15 @@
   },
   "homepage": "http://gr2m.github.io/humble-localstorage/",
   "devDependencies": {
-    "browserify": "^13.0.0",
     "chai": "^3.5.0",
-    "derequire": "^2.0.3",
-    "doxx": "^2.1.1",
     "expect.js": "^0.3.1",
-    "gh-pages-deploy": "^0.4.2",
     "mocha": "^3.0.0",
     "semantic-release": "^4.3.5",
     "sinon": "^1.17.3",
-    "testmate": "^1.0.2",
-    "uglify-js": "^2.6.2"
+    "standard": "^12.0.1"
   },
   "dependencies": {
     "has-localstorage": "^1.0.1",
     "localstorage-memory": "^1.0.2"
-  },
-  "gh-pages-deploy": {
-    "staticpath": "docs",
-    "noprompt": true
   }
 }
