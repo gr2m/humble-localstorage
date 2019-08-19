@@ -27,7 +27,7 @@
     "mocha": "^6.0.0",
     "semantic-release": "^15.12.0",
     "sinon": "^7.1.1",
-    "standard": "^13.0.1"
+    "standard": "^14.0.0"
   },
   "dependencies": {
     "has-localstorage": "^1.0.1",
